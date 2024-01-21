@@ -1,9 +1,9 @@
 package com.example.ElectricityBoardCaseStudy.controllers;
 
 import com.example.ElectricityBoardCaseStudy.model.User;
+import com.example.ElectricityBoardCaseStudy.requestObjects.CreateUserRequest;
 import com.example.ElectricityBoardCaseStudy.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 // UserController.java
 @RestController
@@ -38,15 +36,10 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    @PostMapping(value = "/create", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<String, Object>> createUser(@RequestBody User user) {
-        User createdUser = userService.createUser(user);
-
-        Map<String, Object> response = new HashMap<>();
-        response.put("data", createdUser);
-        response.put("status", "success");
-
-        return ResponseEntity.ok(response);
+    @PostMapping("/create")
+    public ResponseEntity<User> createUser(@RequestBody CreateUserRequest request) {
+        User user = userService.createUser(request);
+        return ResponseEntity.ok(user);
     }
 
     @PutMapping("/{id}")

@@ -48,43 +48,6 @@ public class User {
 
     @Column(name = "government_id_number")
     private int government_id_number;
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public void setDistrict(String district) {
-        this.district = district;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public void setPinCode(int pinCode) {
-        this.pinCode = pinCode;
-    }
-
-    public void setOwnership(Ownership ownership) {
-        this.ownership = ownership;
-    }
-
-    public void setGovernment_id_type(Government_id_type government_id_type) {
-        this.government_id_type = government_id_type;
-    }
-
-    public void setGovernment_id_number(int government_id_number) {
-        this.government_id_number = government_id_number;
-    }
-
 }
 
 

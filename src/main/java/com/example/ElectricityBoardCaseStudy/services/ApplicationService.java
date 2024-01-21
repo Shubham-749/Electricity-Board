@@ -38,7 +38,7 @@ public class ApplicationService {
         User user = userService.getUserById(request.userId);
         application.setUser(user);
         application.setCategory(request.category);
-        application.setLoad(request.load);
+        application.setLoadVal(request.load);
         application.setDateOfApplication(epochTimestampInMilliseconds);
         application.setStatus(ApplicationStatus.PENDING);
         return applicationRepository.save(application);
