@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-// UserController.java
 @RestController
 @RequestMapping("/user")
 public class UserController {

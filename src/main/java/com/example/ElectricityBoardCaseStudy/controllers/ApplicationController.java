@@ -50,13 +50,13 @@ public class ApplicationController {
 
     @PostMapping("/create")
     @ResponseBody
-    public ResponseEntity<Application> createApplication(@RequestBody CreateApplicationRequest request) {
+    public ResponseEntity<Application> createApplication(@RequestBody CreateApplicationRequest request) throws Exception {
         Application createdApplication = applicationService.createApplication(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdApplication);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Application> updateApplication(@PathVariable Long id, @RequestBody UpdateApplicationRequest request) {
+    public ResponseEntity<Application> updateApplication(@PathVariable Long id, @RequestBody UpdateApplicationRequest request) throws Exception {
         Application updatedApplication = applicationService.updateApplication(id, request);
         return ResponseEntity.ok(updatedApplication);
     }

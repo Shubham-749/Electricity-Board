@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-// ReviewerController.java
 @RestController
 @RequestMapping("/reviewer")
 public class ReviewerController {
